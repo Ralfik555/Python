@@ -44,5 +44,5 @@ def get_sequence(n):
         return v
 
 
-print(get_sequence(10))
+print(get_sequence(5))
 

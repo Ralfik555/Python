@@ -58,9 +58,6 @@ print('-'*30,'LAB','-'*30)
 
 from datetime import datetime
 
-
-
-
 def CreateDiffTime(span):
     if span == 'm':
         sec = 60

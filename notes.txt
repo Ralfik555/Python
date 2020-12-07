@@ -1,0 +1,101 @@
+python manage.py runserver
+
+python manage.py startapp [app_name]
+
+python manage.py makemigrations -> like "git commit"
+
+python manage.py sqlmigrate [app_name + number of initial.py file] -> it shows the sql code to be executed
+
+python manage.py migrate -> like "git push". It allows to make changes in DB
+
+python manage.py createsuperuser -> create admin user
+
+python manage.py shell -> opens the python prompt in project
+
+SHELL :
+from blog.models import Post
+from django.contrib.auth.models import User
+
+Post -> we created in our APP
+User -> it is already predefined; already in admin panel
+
+User.objects.all()
+User.objects.first()
+User.objects.filter(username = 'ralfik')
+User.objects.filter(username = 'ralfik').first()
+user = User.objects.filter(username = 'ralfik').first()
+
+user.id
+user.pk
+user.email
+
+user = User.objects.get(id=1)
+
+post_1 = Post(title = 'Blog', content = 'First Post Content!',author = user) "date_posted" is now as default
+or
+post_1 = Post(title = 'Blog', content = 'First Post Content!',author_id = user.id)
+
+post_1.save() -> save to DB
+
+.modelname_set
+
+user.post_set.all() -> it shows all posts belong to user 
+
+user.post_set.create(title = 'Blog 2', content = 'Second Post Content!') -> it creats Post for user
+
+user.profile
+###########################
+
+?next=/link - it shows where site direct us after action (in our case, after log in)
+
+
+from django.contrib.auth.models import User    
+from blog.models import Post   
+import random 
+with open('posts.json') as f:        
+	posts_json = json.load(f)    
+
+ids = [d.id for d in User.objects.all()]
+
+for post in posts_json:       
+	Post(title=post['title'], content=post['content'], author_id=random.choice(ids)).save()
+
+
+
+>>> from django.core.paginator import Paginator
+>>> posts = ['1','2','3','4','5']
+>>> p = Paginator(posts,2)
+>>> p.num_pages
+3
+>>> for page in p.page_range:
+...     print(page)
+...
+1
+2
+3
+>>> p1 = p.page(1)
+>>> p1
+<Page 1 of 3>
+>>> p1.number
+1
+>>> p1.object_list
+['1', '2']
+>>> p1.has_previous()
+False
+>>> p1.has_next()
+True
+>>> p1.next_page_number()
+2
+>>>
+
+http://localhost:8000/?page= [page number]
+
+href="?page=1" - wrzuci jako parametr na koncu linku ?page=1
+
+
+############################################
+redirect vs reverse
+redirect - zwraca url , a reverse string. Więc jak chcemy wrzucać jakieś zmienne typu pk, to wtedy reverse
+np. post/<int:pk>
+
+

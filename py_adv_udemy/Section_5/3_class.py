@@ -65,6 +65,6 @@ lineOfText = 'Renault:Megane:True:True:False:False'
 
 #Problem - True i False niestety sa jako string
 car03 = Car.ReadFromText(lineOfText)
-
+print(car03)
 print(Car.Convert_KM_KW(100))
 print(Car.Convert_KW_KM(50))

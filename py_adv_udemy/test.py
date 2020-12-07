@@ -28,3 +28,11 @@ for i in skill:
 lineOfText = 'Renault:Megane:True:True:False:False'
 
 print(*lineOfText.split(':'))
+print('#'*60)
+
+
+mylist = ["a", "b", "a", "c", "c"]
+
+print(dict.fromkeys(mylist))
+mylist = list(dict.fromkeys(mylist))
+print(mylist)

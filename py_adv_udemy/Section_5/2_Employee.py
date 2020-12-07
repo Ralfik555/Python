@@ -65,7 +65,7 @@ class Employee:
         return new_employee
 
     @staticmethod
-    def get_bakery_files(catalog):
+    def get_employee_files(catalog):
         return glob.glob(catalog + r'\*.emp')
 
 Employee.extendListOfAbilities(['elektronika','mechanik'])
@@ -86,7 +86,9 @@ pawel_kaczmar.save_to_file(r'C:\Users\Ralfik\Desktop\Python\py_adv_udemy\Section
 
 new_emp = Employee.read_from_file(r'C:\Users\Ralfik\Desktop\Python\py_adv_udemy\Section_5\saved_Employee\rafal_kociecki.emp')
 
-print(Employee.get_bakery_files(r'C:\Users\Ralfik\Desktop\Python\py_adv_udemy\Section_5\saved_Employee'))
+print(Employee.get_employee_files(r'C:\Users\Ralfik\Desktop\Python\py_adv_udemy\Section_5\saved_Employee'))
 
 print(Employee.listOfEmployees)
 print(Employee.numberOfEmployees)
+
+print(new_emp)
