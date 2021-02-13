@@ -97,5 +97,11 @@ href="?page=1" - wrzuci jako parametr na koncu linku ?page=1
 redirect vs reverse
 redirect - zwraca url , a reverse string. Więc jak chcemy wrzucać jakieś zmienne typu pk, to wtedy reverse
 np. post/<int:pk>
+############################################
+In templates:
+{{}} -  variables/data
+{%%} - functions / for loop / if else etc.
+
+
 
 
