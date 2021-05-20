@@ -7,6 +7,11 @@ urlpatterns = [
     path('customer/<str:pk>', account_views.customer,name="customer"),
     path('create_order/<str:pk>', account_views.createOrder,name="create_order"),
     path('update_order/<str:pk>', account_views.updateOrder,name="update_order"),
-    path('delete_order/<str:pk>', account_views.deleteOrder,name="delete_order")
+    path('delete_order/<str:pk>', account_views.deleteOrder,name="delete_order"),
+    path('user/',account_views.userPage, name='user-page'),
+
+    path('register/', account_views.registerPage, name="register"),
+	path('login/', account_views.loginPage, name="login"), 
+    path('logout/', account_views.logoutUser, name="logout"), 
 
 ]
